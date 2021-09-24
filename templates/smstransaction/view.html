@@ -1,0 +1,22 @@
+{% csrf_token %} {{form.as_p}}
+
+<table>
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>SMS In</th>
+            <th>SMS Out</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transaction %}
+        <tr>
+            <td> {{transaction.user_id.id}}</td>
+            <td> {{transaction.sms_in.sms_count}}</td>
+            <td> {{transaction.sms_out}}</td>
+            <td> {{transaction.date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
